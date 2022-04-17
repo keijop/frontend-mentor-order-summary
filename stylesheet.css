@@ -1,0 +1,169 @@
+/*-------------  Global settings  -------------*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*-------------  Global variables  -------------*/
+:root{
+    --paleblue: hsl(225, 100%, 94%);
+    --brightblue: hsl(245, 75%, 52%);
+
+    --verypaleblue: hsl(225, 100%, 98%);
+    --desaturatedblue: hsl(224, 23%, 55%);
+    --darkblue: hsl(223, 47%, 23%);
+
+    /* 
+        16px font size at 360px viewport with => 4.4vw 
+        formula: Viewport width unit (vw) = 100 * (Pixel Unit Size / Viewport width px)
+     */
+    --fontsize: 4.4vw; 
+}
+
+html, body{
+    width: 100%;
+    height: 100%;
+    font-family: 'Red Hat Display';
+}
+body{
+    background-image: url('./images/pattern-background-mobile.svg');
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-color: var(--paleblue);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.card{
+    margin: 10% 6%;
+    background-color: white;
+    border-radius: 15px;
+    font-weight: 500;
+    color: var(--darkblue);
+    font-size: var(--fontsize);
+}
+
+.card > :not(:first-child, :last-child), .main__p {
+    margin: 8% 6% 0 6%;
+}
+
+.top-img__img{
+    width: 100%;
+    height: auto; 
+    border-radius: 15px 15px 0 0;
+}
+.main{
+    text-align: center;
+}
+.main__h1{
+    font-weight: 900;
+}
+.main__p{
+    color: var(--desaturatedblue);
+}
+.subscription{
+    width: 88%; /* 100% - margin(right+left) */
+    display: inline-block;
+    position: relative;
+    background-color: var(--verypaleblue);
+    padding: 4% 3%;
+    border-radius: 10px;
+    font-size: 0.9em;
+
+}
+.subscription__img, .subscription__text, .subscription__change{
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 2%;
+}
+.subscription__text{
+    margin-left: 4%;
+}
+.subscription__text  span:first-child, .subscription__change {
+    font-weight: 700;
+}
+.subscription__price{
+    color: var(--desaturatedblue);
+}
+.subscription__change{
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    right: 6%;
+}
+button{
+    cursor: pointer;
+    background: none;
+    border: none;
+    width: 88%; /* 100% - margin(right+left) */
+    font-size: 0.9em;
+}
+.payment-btn{
+    background-color: var(--brightblue);
+    height: 14vw;
+    border-radius: 10px;
+    box-shadow: 0 20px 8px var(--paleblue);
+    color: var(--verypaleblue);
+    font-weight: 700;
+    transition: transform 0.3s;
+}
+.cancel-btn{
+    color: var(--desaturatedblue);
+    font-weight: 700;
+    margin: 8%;
+}
+.subscription:hover{
+    color:  hsl(244.9, 62%, 64.9%);
+}
+.payment-btn:hover {
+    background-color:  hsl(244.9, 62%, 64.9%);;
+}
+.cancel-btn:hover{
+    color: var(--darkblue);
+}
+.attribution { 
+    font-size: 11px; text-align: center; 
+}
+
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
+
+@media only screen and (min-width: 600px){
+    body{
+      background-image: url('./images/pattern-background-desktop.svg');
+    }
+    .card{
+        width: 50vw;
+        margin: 8% auto;
+        font-size: 16px;
+    }
+    .card > :not(:first-child, :last-child), .main__p {
+        width: 80%;
+        margin: 8% 10% 0 10%;
+    }
+    .main__p, .subscription{
+        margin-top: 5% !important; 
+    }
+    .subscription{
+       padding: 5% 4%; 
+    }
+    .payment-btn{
+        height: 50px;
+    }
+}
+@media only screen and (min-width: 992px){
+    .card{
+        width: 30vw;
+    }    
+    .subscription__text{
+        margin-left: 7%;
+    }
+}
+
+
+
+
